@@ -3,7 +3,6 @@ package com.example.management.application.services;
 import com.example.management.application.ports.in.OrderUseCase;
 import com.example.management.application.ports.out.OrderRepositoryPort;
 import com.example.management.domain.model.Order;
-import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -11,8 +10,14 @@ import java.util.Optional;
 
 /**
  * Implementación por defecto de los casos de uso de órdenes.
+ *
+ * <p>
+ * Guardian: esta clase forma parte de la capa de aplicación y permanece
+ * libre de anotaciones de framework (por ejemplo, {@code @Service}). La
+ * integración con Spring se realiza desde la capa de infraestructura
+ * mediante configuración explícita.
+ * </p>
  */
-@Service
 public class OrderService implements OrderUseCase {
 
     private final OrderRepositoryPort orderRepositoryPort;

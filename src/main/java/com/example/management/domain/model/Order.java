@@ -2,11 +2,21 @@ package com.example.management.domain.model;
 
 import java.time.LocalDateTime;
 
-public class Order {
+/**
+ * Representa una orden dentro del dominio.
+ *
+ * <p>
+ * La clase es inmutable: todos los atributos son {@code final} y sólo pueden
+ * establecerse en el momento de la construcción. Esto facilita el
+ * razonamiento, mejora la seguridad en entornos concurrentes y evita estados
+ * intermedios inconsistentes sin cambiar el comportamiento observable.
+ * </p>
+ */
+public final class Order {
 
-    private Long id;
-    private String description;
-    private LocalDateTime createdAt;
+    private final Long id;
+    private final String description;
+    private final LocalDateTime createdAt;
 
     public Order(Long id, String description, LocalDateTime createdAt) {
         this.id = id;
